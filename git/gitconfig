@@ -2,4 +2,4 @@
 	name = Tobias Bell
 	email = tobias.bell@gmail.com
 [push]
-	default = simple
+	default = matching
