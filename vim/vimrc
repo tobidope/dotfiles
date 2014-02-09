@@ -1,4 +1,5 @@
 " First call pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 runtime! debian.vim
