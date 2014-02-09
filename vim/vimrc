@@ -1,10 +1,13 @@
 " First call pathogen
+filetype off " Needed for Debian
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+" Generate helptags for loaded bundles
+execute pathogen#helptags()
 
-runtime! debian.vim
 set nocompatible
 syntax on
+filetype plugin indent on
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -13,24 +16,20 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
-if has("autocmd")
-  filetype plugin indent on
-endif
-
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 set autowrite		" Automatically save before commands like :next and :make
-set hidden	        " Hide buffers when they are abandoned
+set hidden			" Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes) in terminals
 set wildmenu		" Bessere Auswahl bei Vervollständigung von Pfaden
 set number		" Anzeige der Zeilennummern
 set laststatus=2	" Statuszeile wird immer angezeigt
 set completeopt=menu,longest
-set ts=4
-set sw=4
+set tabstop=4
+set shiftwidth=4
 
 " Sichtbarer whitespace
 set listchars=tab:▸\ ,eol:¬
