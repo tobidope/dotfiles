@@ -3,3 +3,6 @@
 	email = tobias.bell@gmail.com
 [push]
 	default = matching
+[alias]
+	st = status
+	ci = commit -a
