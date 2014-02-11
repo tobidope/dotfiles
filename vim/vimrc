@@ -31,6 +31,7 @@ set laststatus=2	" Statuszeile wird immer angezeigt
 set completeopt=menu,longest
 set tabstop=4
 set shiftwidth=4
+set enc=utf-8
 
 " Sichtbarer whitespace
 set listchars=tab:▸\ ,eol:¬
