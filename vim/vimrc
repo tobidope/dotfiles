@@ -32,6 +32,7 @@ set completeopt=menu,longest
 set tabstop=4
 set shiftwidth=4
 set enc=utf-8
+set backspace=indent,eol,start
 
 " Sichtbarer whitespace
 set listchars=tab:▸\ ,eol:¬
