@@ -1,8 +1,29 @@
 [user]
-	name = Tobias Bell
+	name = Tobias Bell 
 	email = tobias.bell@gmail.com
 [push]
 	default = matching
 [alias]
 	st = status
 	ci = commit -a
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = /Users/tobias/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/tobias/.stCommitMsg
+[merge]
+	tool = p4merge
+[mergetool]
+	keepTemporaries = false
+	prompt = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
