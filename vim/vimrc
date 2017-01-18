@@ -15,6 +15,7 @@ if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
+colorscheme smyck
 set encoding=utf-8
 set showcmd     " Show (partial) command in status line.
 set showmatch       " Show matching brackets.

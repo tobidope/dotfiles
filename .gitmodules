@@ -16,3 +16,9 @@
 [submodule "vim/bundle/vim-jinja"]
 	path = vim/bundle/vim-jinja
 	url = https://github.com/lepture/vim-jinja.git
+[submodule "vim/bundle/pytest.vim"]
+	path = vim/bundle/pytest.vim
+	url = git@github.com:alfredodeza/pytest.vim.git
+[submodule "vim/bundle/jedi-vim"]
+	path = vim/bundle/jedi-vim
+	url = git@github.com:davidhalter/jedi-vim.git
