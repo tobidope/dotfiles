@@ -19,7 +19,7 @@ colorscheme smyck
 set encoding=utf-8
 set showcmd     " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
-set ignorecase      " Do case insensitive matching
+set ignorecase
 set smartcase       " Do smart case matching
 set incsearch       " Incremental search
 set autowrite       " Automatically save before commands like :next and :make
@@ -34,6 +34,7 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 set backspace=indent,eol,start
+set noswapfile
 
 " Sichtbarer whitespace
 set listchars=tab:▸\ ,eol:¬
@@ -50,9 +51,9 @@ map Ö {
 map Ä }
 map ß /
 " Save with ctrl-s in every modes
-map <C-Z> :update<CR>
-vmap <C-Z> <C-C>:update<CR>
-imap <C-Z> <C-O>:update<CR>
+map <C-S> :update<CR>
+vmap <C-S> <C-C>:update<CR>
+imap <C-S> <C-O>:update<CR>
 
 let maplocalleader = ","
 let mapleader = ","
