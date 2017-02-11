@@ -1,43 +1,47 @@
-" First call pathogen
-filetype off " Needed for Debian
-runtime bundle/pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-" Generate helptags for loaded bundles
-execute pathogen#helptags()
-
-set nocompatible
-syntax on
-filetype plugin indent on
+" Plugins jetzt mit junegunn/vim-plug managen
+call plug#begin()
+" git plugin
+Plug 'tpope/vim-fugitive'
+" Python completion und mehr
+Plug 'davidhalter/jedi-vim'
+" HübscherVerzeichnisbaum
+Plug 'scrooloose/nerdtree'
+" Unterstützung zum Ausführen von py.test
+Plug 'alfredodeza/pytest.vim'
+" Sinnvolle vim Voreinstellungen
+Plug 'tpope/vim-sensible'
+" Syntaxchecker für viele Sprachen
+Plug 'vim-syntastic/syntastic'
+" Initialize plugin system
+call plug#end()
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
+  " .vimrc nach Änderung automatisch wieder laden
   autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
 colorscheme smyck
+
 set encoding=utf-8
-set showcmd     " Show (partial) command in status line.
-set showmatch       " Show matching brackets.
+set showcmd " Show (partial) command in status line.
+set showmatch " Show matching brackets.
 set ignorecase
-set smartcase       " Do smart case matching
-set incsearch       " Incremental search
-set autowrite       " Automatically save before commands like :next and :make
-set hidden          " Hide buffers when they are abandoned
-set mouse=a     " Enable mouse usage (all modes) in terminals
-set wildmenu        " Bessere Auswahl bei Vervollständigung von Pfaden
-set number      " Anzeige der Zeilennummern
-set laststatus=2    " Statuszeile wird immer angezeigt
-set completeopt=menu,longest
+set smartcase " Do smart case matching
+set autowrite " Automatically save before commands like :next and :make
+set hidden " Hide buffers when they are abandoned
+set mouse=a " Enable mouse usage (all modes) in terminals
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set noexpandtab
-set backspace=indent,eol,start
+set expandtab
 set noswapfile
 
 " Sichtbarer whitespace
 set listchars=tab:▸\ ,eol:¬
+" Shortcut um Anzeige von whitspace zu togglen
+nmap <leader>l :set list!<CR>
 
 if has("gui")
   set guioptions-=T   " Toolbar ausblenden
@@ -50,26 +54,9 @@ map ä ]
 map Ö {
 map Ä }
 map ß /
-" Save with ctrl-s in every modes
-map <C-S> :update<CR>
-vmap <C-S> <C-C>:update<CR>
-imap <C-S> <C-O>:update<CR>
 
 let maplocalleader = ","
 let mapleader = ","
 
-" Shortcut um Anzeige von whitspace zu togglen
-nmap <leader>l :set list!<CR>
-
-" SuperTab-Einstellungen
-"let g:SuperTabDefaultCompletionType = "context"
-
-" Rechtschreibung
-set nospell
-set spelllang=de_20,en
-set spellsuggest=10
-nmap <silent> <F7> :setlocal spell!<CR>
-imap <silent> <F7> <C-O:setlocal spell!<CR>
 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
